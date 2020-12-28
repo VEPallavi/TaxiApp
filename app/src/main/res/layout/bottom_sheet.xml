@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+    <com.example.taxiapp.font.TextViewRegular
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="Schedule a Ride"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_15sdp" />
+
+    <com.example.taxiapp.font.TextViewRegular
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="Sat, May 2 2020"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15sdp" />
+
+
+    <com.example.taxiapp.font.TextViewRegular
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="4:25PM - 4:35PM"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15sdp" />
+
+
+    <com.example.taxiapp.font.TextViewLight
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="SET PICKUP TIME"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sdp" />
+
+</LinearLayout>
+

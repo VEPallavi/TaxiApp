@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:rotation="-180"
+        android:src="@drawable/arrow_up" />
+
+    <com.example.taxiapp.font.TextViewBold
+        android:id="@+id/colapse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="Select your ride"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:padding="@dimen/_7sdp">
+
+        <ImageView
+            android:id="@+id/icon_currency"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/cash" />
+
+        <com.example.taxiapp.font.TextViewRegular
+            android:id="@+id/tv_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_toLeftOf="@+id/tv_rate"
+            android:layout_toRightOf="@+id/icon_currency"
+            android:text="Cash"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+    </RelativeLayout>
+
+    <com.example.taxiapp.font.TextViewLight
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="CONFIRM"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sdp" />
+
+</LinearLayout>
+
