@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
@@ -34,6 +35,10 @@ public class SelectRideActivity extends AppCompatActivity {
         layoutBottomSheet.findViewById(R.id.colapse).setOnClickListener((v) -> {
 
             toogle();
+        });
+        layoutBottomSheet.findViewById(R.id.confirm2).setOnClickListener((v) -> {
+
+            startSearchingRide();
         });
 
 
@@ -85,6 +90,11 @@ public class SelectRideActivity extends AppCompatActivity {
 
             toogle();
         });
+
+        findViewById(R.id.confirm1).setOnClickListener((v) -> {
+
+            startSearchingRide();
+        });
     }
 
     void toogle() {
@@ -93,5 +103,9 @@ public class SelectRideActivity extends AppCompatActivity {
         } else {
             sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
         }
+    }
+
+    void startSearchingRide() {
+        startActivity(new Intent(this, FindingRideActivity.class));
     }
 }
