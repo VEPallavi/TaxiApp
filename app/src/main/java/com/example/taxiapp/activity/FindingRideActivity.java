@@ -2,6 +2,7 @@ package com.example.taxiapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -37,6 +38,11 @@ public class FindingRideActivity extends AppCompatActivity {
         findViewById(R.id.call).setOnClickListener((v) -> {
             Toast.makeText(this, "CAlling..", Toast.LENGTH_SHORT).show();
 
+        });
+
+        ll_driver_info.setOnClickListener((v) -> {
+
+            startActivity(new Intent(FindingRideActivity.this, RouteActivity.class));
         });
 
 
