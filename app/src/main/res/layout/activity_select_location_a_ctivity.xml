@@ -35,6 +35,7 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:hint="Pickup location.."
         android:textSize="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_10sdp"
         app:layout_constraintLeft_toRightOf="@+id/iv_loc_icon"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_back" />

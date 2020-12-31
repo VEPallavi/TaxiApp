@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:src="@drawable/arrow_up" />
 
             <com.example.taxiapp.font.TextViewBold
@@ -49,7 +49,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:text="Ride Detail"
+                android:text="Ride Details"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12sdp" />
         </LinearLayout>

@@ -81,7 +81,7 @@
             android:layout_marginRight="@dimen/_5sdp"
             android:text="Cash"
             android:textColor="@color/black"
-            android:textSize="@dimen/_12sdp" />
+            android:textSize="@dimen/_11sdp" />
 
     </RelativeLayout>
 
@@ -142,7 +142,7 @@
             android:layout_marginTop="@dimen/_80sdp"
             android:text="Pickup loaction\nNoida"
             android:textColor="@color/black"
-            android:textSize="@dimen/_12sdp" />
+            android:textSize="@dimen/_9sdp" />
 
         <com.example.taxiapp.font.TextViewBold
             android:id="@+id/adress_destination"
@@ -152,7 +152,7 @@
             android:layout_marginTop="@dimen/_80sdp"
             android:text="Drop location\nNoida"
             android:textColor="@color/black"
-            android:textSize="@dimen/_12sdp" />
+            android:textSize="@dimen/_9sdp" />
 
     </RelativeLayout>
 
@@ -168,8 +168,8 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <ImageView
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/_10sdp"
             android:background="@drawable/waiting" />
@@ -184,7 +184,7 @@
             android:layout_marginBottom="@dimen/_15sdp"
             android:text="Waiting for confirmation"
             android:textColor="@color/black"
-            android:textSize="@dimen/_16sdp" />
+            android:textSize="@dimen/_14sdp" />
 
     </LinearLayout>
 

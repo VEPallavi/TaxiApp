@@ -107,7 +107,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_15sdp"
-        android:text="59:00 Second"
+        android:text="59 Second"
         android:textSize="@dimen/_13sdp"
         app:layout_constraintLeft_toLeftOf="@id/tv1"
         app:layout_constraintTop_toBottomOf="@+id/ll_otp_" />

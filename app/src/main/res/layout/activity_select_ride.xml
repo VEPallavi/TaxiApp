@@ -76,7 +76,7 @@
                     android:layout_centerVertical="true"
                     android:src="@drawable/cash" />
 
-                <com.example.taxiapp.font.TextViewRegular
+                <com.example.taxiapp.font.TextViewBold
                     android:id="@+id/tv_mode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                     android:layout_toRightOf="@+id/icon_search"
                     android:text="$1234"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_12sdp" />
+                    android:textSize="@dimen/_13sdp" />
 
 
             </RelativeLayout>
@@ -113,7 +113,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:background="@color/blue"
                 android:gravity="center"
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/_9sdp"
                 android:text="CONFIRM"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_18sdp" />
