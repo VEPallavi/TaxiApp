@@ -2,10 +2,16 @@ package com.example.taxiapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
 
 import com.example.taxiapp.R;
@@ -17,6 +23,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -24,6 +31,11 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
     BottomSheetBehavior sheetBehavior;
     LinearLayout layoutBottomSheet;
     TextViewBold tv_enterLocation;
+    NavigationView navigationView;
+    View headerView;
+    LinearLayout ll_trip, ll_payment, ll_setting;
+    ImageView menu_icon;
+    DrawerLayout navDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +44,16 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        navDrawer = findViewById(R.id.drawer_layout);
         layoutBottomSheet = findViewById(R.id.bottom_sheet);
         tv_enterLocation = findViewById(R.id.tv_enterLocation);
+        navigationView = findViewById(R.id.nav_view);
+        headerView = navigationView.getHeaderView(0);
+        ll_trip = headerView.findViewById(R.id.ll_trip);
+        ll_payment = headerView.findViewById(R.id.ll_payment);
+        ll_setting = headerView.findViewById(R.id.ll_setting);
+        menu_icon = findViewById(R.id.menu_icon);
+
         sheetBehavior = BottomSheetBehavior.from(layoutBottomSheet);
 
         listener();
@@ -94,5 +114,34 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
 
             startActivity(new Intent(HomeActivity.this, SelectLocationACtivity.class));
         });
+
+        navigationView.findViewById(R.id.ll_logout).setOnClickListener((v) -> {
+            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+            finishAffinity();
+        });
+
+
+        ll_trip.setOnClickListener((v) -> {
+
+            startActivity(new Intent(HomeActivity.this, TripActivity.class));
+        });
+
+        ll_payment.setOnClickListener((v) -> {
+
+            startActivity(new Intent(HomeActivity.this, PaymentActivity.class));
+        });
+
+        ll_setting.setOnClickListener((v) -> {
+
+            startActivity(new Intent(HomeActivity.this, SettingActivity.class));
+        });
+
+        menu_icon.setOnClickListener((v) -> {
+          
+            if (!navDrawer.isDrawerOpen(GravityCompat.START))
+                navDrawer.openDrawer(GravityCompat.START);
+            else navDrawer.closeDrawer(GravityCompat.END);
+        });
+
     }
 }

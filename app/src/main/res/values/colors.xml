@@ -16,6 +16,8 @@
     <color name="blue_fb">#3766B8</color>
     <color name="now_bg">#53BD9D</color>
     <color name="gray">#707070</color>
+    <color name="light_gray">#90707070</color>
+    <color name="circle_profile">#D4E6FE</color>
 
 
 </resources>

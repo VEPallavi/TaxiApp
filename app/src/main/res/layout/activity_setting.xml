@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.PaymentActivity">
+    tools:context=".activity.SettingActivity">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -18,6 +19,7 @@
         <ImageView
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
+            android:id="@+id/iv_back"
             android:layout_marginRight="@dimen/_10sdp"
             android:padding="@dimen/_7sdp"
             android:src="@drawable/arrow_back" />
@@ -28,7 +30,7 @@
             android:layout_marginLeft="@dimen/_10sdp"
             android:text="Settings"
             android:textColor="@color/black"
-            android:textSize="@dimen/_18sdp" />
+            android:textSize="@dimen/_14sdp" />
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -49,16 +51,33 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/_10sdp">
 
-            <com.github.siyamed.shapeimageview.CircularImageView
-                android:id="@+id/profile"
-                android:layout_width="@dimen/_65sdp"
-                android:layout_height="@dimen/_65sdp"
-                android:background="@drawable/user"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:siBorderColor="@color/white"
-                app:siBorderWidth="@dimen/_2sdp" />
 
+            <RelativeLayout
+                android:id="@+id/rl_profile"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@color/black"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:background="@drawable/ic_menu_camera"
+                    android:backgroundTint="@color/blue" />
+            </RelativeLayout>
 
             <com.example.taxiapp.font.TextViewRegular
                 android:id="@+id/name"
@@ -69,8 +88,8 @@
                 android:text="John Doe"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14sdp"
-                app:layout_constraintLeft_toRightOf="@+id/profile"
-                app:layout_constraintTop_toTopOf="@+id/profile" />
+                app:layout_constraintLeft_toRightOf="@+id/rl_profile"
+                app:layout_constraintTop_toTopOf="@+id/rl_profile" />
 
             <ImageView
                 android:id="@+id/call_icon"
@@ -81,7 +100,7 @@
                 app:layout_constraintLeft_toLeftOf="@+id/name"
                 app:layout_constraintTop_toBottomOf="@id/name" />
 
-            <com.example.taxiapp.font.TextViewRegular
+            <com.example.taxiapp.font.TextViewLight
                 android:id="@+id/car_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,7 +122,7 @@
                 app:layout_constraintLeft_toLeftOf="@+id/name"
                 app:layout_constraintTop_toBottomOf="@id/call_icon" />
 
-            <com.example.taxiapp.font.TextViewRegular
+            <com.example.taxiapp.font.TextViewLight
                 android:id="@+id/car_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -124,7 +143,7 @@
         android:layout_width="0dp"
         android:layout_height="1px"
         android:layout_marginTop="@dimen/_10sdp"
-        android:background="@color/gray"
+        android:background="@color/light_gray"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_info" />
@@ -143,34 +162,194 @@
         app:layout_constraintTop_toBottomOf="@+id/line1" />
 
     <LinearLayout
+        android:id="@+id/ll_adr"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="@id/txt_save_place"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_save_place">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_23sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:layout_gravity="center"
+                android:background="@drawable/home_2" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <com.example.taxiapp.font.TextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+                <com.example.taxiapp.font.TextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1234 main st"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_23sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:layout_gravity="center"
+                android:background="@drawable/saved_3" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <com.example.taxiapp.font.TextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Saved Location Name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+                <com.example.taxiapp.font.TextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Abc It Park"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_23sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:layout_gravity="center"
+                android:background="@drawable/saved_3" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <com.example.taxiapp.font.TextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Saved Location Name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+                <com.example.taxiapp.font.TextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Abc It Park"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <com.example.taxiapp.font.TextViewRegular
+                android:id="@+id/new_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Add new place"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_13sdp" />
+
+            <ImageView
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/_30sdp"
+                android:background="@drawable/ic_arrow_forward_24" />
+        </RelativeLayout>
 
     </LinearLayout>
 
+    <View
+        android:id="@+id/line2"
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@color/light_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_adr" />
 
-    <com.example.taxiapp.font.TextViewRegular
-        android:id="@+id/new_text"
+    <com.example.taxiapp.font.TextViewBold
+        android:id="@+id/txt_pv_policy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_15sdp"
-        android:text="Add new place"
-        android:textColor="@color/blue"
-        android:textSize="@dimen/_13sdp"
+        android:text="Privacy Policy"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_mode" />
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
 
-    <ImageView
-        android:layout_width="@dimen/_15sdp"
-        android:layout_height="@dimen/_15sdp"
-        android:layout_marginRight="@dimen/_20sdp"
-        android:background="@drawable/ic_arrow_forward_24"
-        app:layout_constraintBottom_toBottomOf="@+id/new_text"
+    <View
+        android:id="@+id/line3"
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/light_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/new_text" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_pv_policy" />
+
+    <com.example.taxiapp.font.TextViewBold
+        android:id="@+id/txt_term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="Terms &amp; Conditions"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line3" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
