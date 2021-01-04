@@ -4,15 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.taxiapp.R;
 
 public class EnterOtpActivity extends AppCompatActivity {
     EditText otp1, otp2, otp3, otp4;
+    TextView timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public class EnterOtpActivity extends AppCompatActivity {
         otp2 = findViewById(R.id.otp2);
         otp3 = findViewById(R.id.otp3);
         otp4 = findViewById(R.id.otp4);
+        timer = findViewById(R.id.timer);
         findViewById(R.id.tv_go).setOnClickListener((v) -> {
 
             String otp = otp1.getText().toString().trim() + otp2.getText().toString().trim() + otp3.getText().toString().trim() + otp4.getText().toString().trim();
@@ -119,6 +123,19 @@ public class EnterOtpActivity extends AppCompatActivity {
 
             }
         });
+
+
+        new CountDownTimer(60 * 1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                timer.setText(millisUntilFinished / 1000 + " Seconds");
+            }
+
+            public void onFinish() {
+                timer.setText("0 Second");
+            }
+
+        }.start();
 
     }
 
