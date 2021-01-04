@@ -103,10 +103,11 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_4sdp"
+            android:layerType="software"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/_8sdp"
             android:layout_marginRight="@dimen/_5sdp"
-            android:background="@drawable/dashed_line" />
+            android:src="@drawable/dashed_line" />
 
         <ImageView
             android:layout_width="@dimen/_20sdp"
