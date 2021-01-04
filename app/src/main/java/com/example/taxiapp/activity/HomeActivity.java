@@ -123,7 +123,8 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
 
         ll_trip.setOnClickListener((v) -> {
 
-            startActivity(new Intent(HomeActivity.this, TripActivity.class));
+            Toast.makeText(this, "Work pending", Toast.LENGTH_SHORT).show();
+           // startActivity(new Intent(HomeActivity.this, TripActivity.class));
         });
 
         ll_payment.setOnClickListener((v) -> {

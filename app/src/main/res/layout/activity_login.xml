@@ -58,11 +58,12 @@
             android:padding="@dimen/_2sdp">
 
             <ImageView
+                android:id="@+id/flag"
                 android:layout_width="@dimen/_25sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/_1sdp"
-                android:background="@drawable/canada" />
+                android:src="@drawable/canada" />
 
             <com.example.taxiapp.font.TextViewBold
                 android:id="@+id/countryCode"
@@ -106,6 +107,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_margin="@dimen/_5sdp"
+            android:visibility="gone"
             android:layout_marginLeft="@dimen/_7sdp"
             android:src="@drawable/verified" />
 
